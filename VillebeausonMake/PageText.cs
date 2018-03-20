@@ -100,7 +100,7 @@ namespace VillebeausonMake
                 }
                 else
                 {
-                    html.AppendLine(string.Format("<p>{0}</p>", line));
+                    html.AppendLine(string.Format("<p>{0}</p>", PageUrl.replace(line)));
                 }
             }
             return html.ToString();

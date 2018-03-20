@@ -43,18 +43,7 @@ namespace VillebeausonMake
             string rc = pages[id];
             if (string.IsNullOrEmpty(rc) || rc.All(c => char.IsWhiteSpace(c)))
                 return null;
-            int first = 0;
-            for (;;)
-            {
-                first = rc.IndexOf('[', first);
-                if (first == -1)
-                    break;
-                int next = rc.IndexOf(']', first);
-                assert(next > first);
-                string found = rc.Substring(first + 1, next - first - 1);
-                assert(pages.ContainsKey(found));
-                rc = rc.Replace("[" + found + "]", PageUrl.toUrl(found));
-            }
+            rc = PageUrl.replace(rc);
             return rc;
         }
 

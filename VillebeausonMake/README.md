@@ -46,6 +46,8 @@ The format of these files is relatively simple so that anyone can edit them fair
 - a separate paragraph for each line of text (optionally multiple sentences per line/paragraph)
 - empty lines ignored
 
+These lines of text may include inline HTML tags (there's currently one anchor/hyperlink, in the [evenements.txt](Pages/evenements.txt) / [events.txt](events.txt) page).
+
 ## template.html
 
 The [template.html](template.html) defines the overall format of every HTML page.
@@ -82,11 +84,14 @@ I experimented with different versions/implementations of navigation bar.
 The current one is a home-grown version which doesn't depend on Bootstrap.
 - [PageText.cs](PageText.cs) is called from [Page.cs](Page.cs) and from [Fragments.cs](Fragments.cs) to help parse the text files and convert it to HTML.
 - [Output.cs](Output.cs) is called from [Template.cs](Template.cs) -- all it knows is where to write the output (i.e. the `WebSite` folder), not what to write.
+- [PageUrl.cs](PageUrl.cs) is called from various places to create page URLs from page IDs (see below).
 - [Program.cs](Program.cs) contains the `Main` method -- it gets all the `Page` instances, and passes them into the `output` method of the `Template` class.
+
+## Page URLs
 
 One peculiarity is that, in the text files, any text in `[ ]` square brackets must be a page ID (e.g. `[index]`) and is replaced with a relative URL.
 
-Another peculiarity is that the program includes a hard-coded `debug` flag -- when this flag is `true` it generates URLs which end with `.html`:
+Another peculiarity is that the `PageUrl` class includes a hard-coded `debug` flag -- when this flag is `true` it generates URLs which end with `.html`:
 
 - This helps me develope (test) the web pages within Visual Studio on my machine -- apparently the mini-webserver that's built-in to Visual Studio
 doesn't support URL rewriting, so I need the complete/correct URLs to navigate between pages.

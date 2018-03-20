@@ -64,6 +64,11 @@ namespace VillebeausonMake
             return new PageId(title, id);
         }
 
+        internal static void assertPageId(string id)
+        {
+            assert(pageIds.Any(found => found.id == id));
+        }
+
         static void assert(bool b)
         {
             if (!b)

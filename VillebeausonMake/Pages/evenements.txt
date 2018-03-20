@@ -1,6 +1,6 @@
 ﻿# Événements
 Pour nous, pas de musique sans partage. Nous donnons donc principalement des concerts pour faire découvrir notre musique.
-Cela est particulièrement important pour nous puisque notre répertoire est unique.
+Cela est particulièrement important pour nous puisque <a href="[musique]">notre répertoire</a> est unique.
 Nous organisons également des concerts de collecte de fonds et nous participons souvent à des événements communautaires comme le Téléthon.
 Pour nous, toutes les occasions de chanter sont bonnes – nous avons même chanté dans le défilé du Tour de France à Sainte Mère Église.
 C'est un honneur pour nous de chanter chaque année lors de la cérémonie de commémoration des Fusillés de Beaucoudray.

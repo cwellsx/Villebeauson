@@ -17,5 +17,30 @@ namespace VillebeausonMake
             string suffix = (debug) ? ".html" : null;
             return (id == "index") ? "/" : "/" + id + suffix;
         }
+
+        // search for text like "[events]"
+        // and replace it with a corresponding URL like "/events"
+        internal static string replace(string text)
+        {
+            int first = 0;
+            for (;;)
+            {
+                first = text.IndexOf('[', first);
+                if (first == -1)
+                    break;
+                int next = text.IndexOf(']', first);
+                assert(next > first);
+                string found = text.Substring(first + 1, next - first - 1);
+                Pages.assertPageId(found);
+                text = text.Replace("[" + found + "]", PageUrl.toUrl(found));
+            }
+            return text;
+        }
+
+        static void assert(bool b)
+        {
+            if (!b)
+                throw new Exception();
+        }
     }
 }
