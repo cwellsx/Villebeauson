@@ -23,7 +23,7 @@ namespace VillebeausonMake
             this.title = title;
             this.html = getHtml(id);
             string suffix = (Program.debug) ? ".html" : null;
-            this.url = "/" + id + suffix;
+            this.url = (id == "index") ? "/" : "/" + id + suffix;
             this.filename = id + ".html";
         }
 

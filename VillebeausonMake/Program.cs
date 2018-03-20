@@ -13,7 +13,6 @@ namespace VillebeausonMake
         static void Main(string[] args)
         {
             Template.output(Page.pages);
-            //Output.write(Page.pages);
         }
     }
 }
