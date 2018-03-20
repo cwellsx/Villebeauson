@@ -22,17 +22,26 @@ header a {
     display: block;
     float: left;
     padding: 0.5rem;
+}
+header a,
+header a:hover {
     color: #cbbde2;
 }
-header .active {
-    color: #ffffff;
+header a.active {
     font-weight: 500;
+}
+header a.active,
+header a.active:hover {
+    color: #ffffff;
 }
 header a.language {
     color: #ffe484;
     border-color: #ffe484 !important;
     float: right;
     font-weight: 500;
+}
+header a.language:hover {
+    text-decoration: underline;
 }
 .announce {
     padding: 0.5rem 1rem;
