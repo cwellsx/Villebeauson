@@ -8,6 +8,7 @@ namespace VillebeausonMake
 {
     static class Navbar
     {
+        // I experimented with three implementations
         static string[] headers =
         {
 @"<header class=""navbar navbar-expand"">
@@ -32,6 +33,7 @@ namespace VillebeausonMake
   </header>"
         };
 
+        // ... three implementations
         static string[] anchors =
         {
             @"<li class=""nav-item""><a class=""nav-link{0}"" href=""{1}"">{2}</a></li>",
@@ -48,6 +50,8 @@ namespace VillebeausonMake
             int n = pages.Length / 2;
             int remainder = i % 2;
 
+            // ... currently using the last of the three implementations
+            // because it gave the best result when page was too narrow for all the navbar links
             int style = 2;
 
             IEnumerable<string> items = getIndexes(n, remainder).Select(index =>
@@ -55,8 +59,6 @@ namespace VillebeausonMake
                 bool isActive = (index == i);
                 Page page = pages[index];
                 return string.Format(
-                    //@"<li class=""nav-item""><a class=""nav-link{0}"" href=""{1}"">{2}</a></li>",
-                    //@"<a class=""nav-item nav-link{0}"" href=""{1}"">{2}</a>",
                     anchors[style],
                     (isActive) ? " active" : null,
                     page.url,

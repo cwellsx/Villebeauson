@@ -27,19 +27,25 @@ namespace VillebeausonMake
 
         internal static void output(Page[] pages)
         {
+            // assert an even number of pages (pairs of French/English pages)
             int n = pages.Length;
             assert((n % 2) == 0);
             for (int i = 0; i < n; ++i)
             {
+                // for each page ...
                 Page page = pages[i];
+                // ... create the navigation bar
                 string navbar = Navbar.getHtml(pages, i);
+                // ... and output all content
                 output(page, navbar);
             }
         }
 
         static void output(Page page, string navbar)
         {
+            // get a copy of the template
             string html = templateHtml;
+            // replace content into the template
             html = html.Replace("{title}", page.title);
             html = html.Replace("{navbar}", navbar);
             string fragment = page.fragment;
@@ -53,7 +59,7 @@ namespace VillebeausonMake
             }
             html = html.Replace("{announce}", fragment);
             html = html.Replace("{html}", page.html);
-
+            // output the result
             Output.write(page.filename, html);
         }
     }

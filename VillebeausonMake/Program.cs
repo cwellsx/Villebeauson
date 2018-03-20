@@ -8,18 +8,12 @@ namespace VillebeausonMake
 {
     class Program
     {
-        const bool debug = false;
-
         static void Main(string[] args)
         {
+            // read all pages (and fragments)
             Page[] pages = Pages.getPages();
+            // push page contents into the HTML template for output
             Template.output(pages);
-        }
-
-        internal static string toUrl(string id)
-        {
-            string suffix = (Program.debug) ? ".html" : null;
-            return (id == "index") ? "/" : "/" + id + suffix;
         }
     }
 }

@@ -8,11 +8,18 @@ namespace VillebeausonMake
 {
     static class PageText
     {
-        internal static string getHtml(string[] lines, bool fancy)
+        // I tried two implementation, one simple and one fancy.
+        // The fancy puts contiguous lines in one paragraph, and treats an empty line as a paragraph break.
+        // The simple puts each line in its own paragraph and ignores empty lines.
+        // I decided I prefer the simple.
+        const bool fancy = false;
+
+        internal static string getHtml(string[] lines)
         {
             return (fancy) ? getFancy(lines) : getSimple(lines);
         }
 
+        // not used
         enum State
         {
             Start,
@@ -20,6 +27,7 @@ namespace VillebeausonMake
             Break
         }
 
+        // not used
         static string getFancy(string[] lines)
         {
             StringBuilder html = new StringBuilder();
@@ -74,6 +82,7 @@ namespace VillebeausonMake
             return html.ToString();
         }
 
+        // used
         static string getSimple(string[] lines)
         {
             StringBuilder html = new StringBuilder();

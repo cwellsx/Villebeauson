@@ -53,7 +53,7 @@ namespace VillebeausonMake
                 assert(next > first);
                 string found = rc.Substring(first + 1, next - first - 1);
                 assert(pages.ContainsKey(found));
-                rc = rc.Replace("[" + found + "]", Program.toUrl(found));
+                rc = rc.Replace("[" + found + "]", PageUrl.toUrl(found));
             }
             return rc;
         }

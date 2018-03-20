@@ -20,7 +20,7 @@ namespace VillebeausonMake
         {
             this.title = title;
             this.html = getHtml(id);
-            this.url = Program.toUrl(id);
+            this.url = PageUrl.toUrl(id);
             this.filename = id + ".html";
             this.fragment = Fragments.getFragment(id);
         }
@@ -29,7 +29,7 @@ namespace VillebeausonMake
         {
             string path = "..\\..\\Pages\\" + id + ".txt";
             string[] lines = File.ReadAllLines(path);
-            return PageText.getHtml(lines, false);
+            return PageText.getHtml(lines);
         }
     }
 }
