@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fragments.cs" />
     <Compile Include="Navbar.cs" />
     <Compile Include="Output.cs" />
     <Compile Include="Page.cs" />
@@ -55,6 +56,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\!fragments.txt" />
     <Content Include="Pages\events.txt" />
     <Content Include="Pages\music.txt" />
     <Content Include="Pages\musique.txt" />

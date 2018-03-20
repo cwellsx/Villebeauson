@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta charset="utf-8" />
-    <title>{title}</title>
+    <title>{title} &dash; Ville-Beau-Son</title>
     <link href="/bootstrap.min.css" rel="stylesheet" />
     <style>
 body {
@@ -28,20 +28,27 @@ header .active {
     color: #ffffff;
     font-weight: 500;
 }
-p {
-    white-space: pre-line;
-}
 header a.language {
     color: #ffe484;
     border-color: #ffe484 !important;
     float: right;
+    font-weight: 500;
+}
+.announce {
+    padding: 0.5rem 1rem;
+    font-size: 120%;
+    margin: 1rem 0;
+    background-color: #e9ecef;
+}
+.announce *:last-child {
+    margin-bottom: 0;
 }
     </style>
 </head>
 <body>
 {navbar}
+{announce}
   <div class="px-3">
-
 <h1 hidden>{title}</h1>
 {html}
   </div>

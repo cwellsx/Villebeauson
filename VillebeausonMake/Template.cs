@@ -42,6 +42,16 @@ namespace VillebeausonMake
             string html = templateHtml;
             html = html.Replace("{title}", page.title);
             html = html.Replace("{navbar}", navbar);
+            string fragment = page.fragment;
+            if (fragment!=null)
+            {
+                fragment = string.Format(
+@"<div class=""announce border rounded"">
+{0}</div>",
+                    fragment
+                    );
+            }
+            html = html.Replace("{announce}", fragment);
             html = html.Replace("{html}", page.html);
 
             Output.write(page.filename, html);

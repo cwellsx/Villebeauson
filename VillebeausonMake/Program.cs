@@ -8,11 +8,18 @@ namespace VillebeausonMake
 {
     class Program
     {
-        internal const bool debug = false;
+        const bool debug = false;
 
         static void Main(string[] args)
         {
             Template.output(Page.pages);
         }
+
+        internal static string toUrl(string id)
+        {
+            string suffix = (Program.debug) ? ".html" : null;
+            return (id == "index") ? "/" : "/" + id + suffix;
+        }
+
     }
 }
