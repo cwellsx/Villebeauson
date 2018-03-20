@@ -47,6 +47,7 @@
     <Compile Include="Navbar.cs" />
     <Compile Include="Output.cs" />
     <Compile Include="Page.cs" />
+    <Compile Include="Pages.cs" />
     <Compile Include="PageText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,9 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\!fragments.txt" />
+    <Content Include="Pages\!pages.txt" />
     <Content Include="Pages\events.txt" />
     <Content Include="Pages\music.txt" />
     <Content Include="Pages\musique.txt" />

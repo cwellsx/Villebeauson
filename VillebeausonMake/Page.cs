@@ -16,10 +16,7 @@ namespace VillebeausonMake
         internal readonly string filename;
         internal readonly string fragment;
 
-        Page(
-            string title,
-            string id
-            )
+        internal Page(string title, string id)
         {
             this.title = title;
             this.html = getHtml(id);
@@ -34,34 +31,5 @@ namespace VillebeausonMake
             string[] lines = File.ReadAllLines(path);
             return PageText.getHtml(lines, false);
         }
-
-        /*
-         * Filenames:
-         * 
-         * - index
-         * - repetitions
-         * - evenements
-         * - musique
-         * 
-         * - welcome
-         * - rehearsals
-         * - events
-         * - music
-         */
-
-        internal static Page[] pages = new Page[]
-        {
-            new Page("Acceuil", "index"),
-            new Page("Home", "welcome"),
-
-            new Page("Événements", "evenements"),
-            new Page("Events", "events"),
-
-            new Page("Répétitions", "repetitions"),
-            new Page("Rehearsals", "rehearsals"),
-
-            new Page("Musique", "musique"),
-            new Page("Music", "music")
-        };
     }
 }

@@ -1,0 +1,8 @@
+﻿Acceuil	index
+Home	welcome
+Événements	evenements
+Events	events
+Répétitions	repetitions
+Rehearsals	rehearsals
+Musique	musique
+Music	music

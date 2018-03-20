@@ -12,7 +12,8 @@ namespace VillebeausonMake
 
         static void Main(string[] args)
         {
-            Template.output(Page.pages);
+            Page[] pages = Pages.getPages();
+            Template.output(pages);
         }
 
         internal static string toUrl(string id)
@@ -20,6 +21,5 @@ namespace VillebeausonMake
             string suffix = (Program.debug) ? ".html" : null;
             return (id == "index") ? "/" : "/" + id + suffix;
         }
-
     }
 }
