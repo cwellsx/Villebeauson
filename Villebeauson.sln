@@ -24,13 +24,22 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite", "WebSite\", "{648
 		SlnRelativePath = "WebSite\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillebeausonMake", "VillebeausonMake\VillebeausonMake.csproj", "{C53EE369-F2D5-4292-881C-73961BAECB67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6483838E-FD09-4812-BB27-A86A7AEEBB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6483838E-FD09-4812-BB27-A86A7AEEBB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6483838E-FD09-4812-BB27-A86A7AEEBB01}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{6483838E-FD09-4812-BB27-A86A7AEEBB01}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C53EE369-F2D5-4292-881C-73961BAECB67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C53EE369-F2D5-4292-881C-73961BAECB67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C53EE369-F2D5-4292-881C-73961BAECB67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C53EE369-F2D5-4292-881C-73961BAECB67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
