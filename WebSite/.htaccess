@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+
+RewriteEngine On
+
+RewriteRule "^/foo$" "/hello.txt"
+RewriteRule "foo" "/hello.txt"
