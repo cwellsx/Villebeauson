@@ -2,5 +2,8 @@ Options +FollowSymLinks
 
 RewriteEngine On
 
-RewriteRule "^/foo$" "/hello.txt"
-RewriteRule "foo" "/hello.txt"
+RewriteRule ^/foo$ /hello.txt
+RewriteRule foo /hello.txt
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
