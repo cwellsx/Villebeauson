@@ -5,8 +5,8 @@
 
 # index
 
-<p>Bienvenue à <a href="[events]">notre prochain concert</a> &hellip;</p>
-<p>&hellip; ou rejoignez-nous <a href=[rehearsals]>pour les répétitions</a>.</p>
+<p>Bienvenue à <a href="[evenements]">notre prochain concert</a> &hellip;</p>
+<p>&hellip; ou rejoignez-nous <a href=[repetitions]>pour les répétitions</a>.</p>
 
 # evenements
 
