@@ -45,7 +45,7 @@ namespace VillebeausonMake
 @"
       ";
 
-        internal static string getHtml(Page[] pages, int i)
+        internal static string getHtml(Page[] pages, int i, out string lang)
         {
             int n = pages.Length / 2;
             int remainder = i % 2;
@@ -69,22 +69,26 @@ namespace VillebeausonMake
             return string.Format(
                 headers[style],
                 string.Join(crlf, items),
-                getLanguage(pages, i, remainder)
+                getLanguage(pages, i, remainder, out lang)
                 );
         }
 
-        static string getLanguage(Page[] pages, int i, int remainder)
+        static string getLanguage(Page[] pages, int i, int remainder, out string lang)
         {
+            // lang is the language of the current page, the value of the <html lang="{lang}"> attribute
+            // language is the language of the other (target) page, the text in the <a class="language"> hyperlink on the navigation bar
             string language;
             int index;
             if (remainder == 0)
             {
                 language = "English";
+                lang = "fr";
                 index = i + 1;
             }
             else
             {
                 language = "Français";
+                lang = "eng";
                 index = i - 1;
             }
             Page page = pages[index];
