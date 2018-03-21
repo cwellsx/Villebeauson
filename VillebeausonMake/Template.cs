@@ -60,7 +60,7 @@ namespace VillebeausonMake
                     );
             }
             html = html.Replace("{announce}", fragment);
-            html = html.Replace("{html}", page.html);
+            html = html.Replace("{html}", page.html + page.images);
             // output the result
             Output.write(page.filename, html);
         }

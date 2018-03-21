@@ -15,6 +15,7 @@ namespace VillebeausonMake
         internal readonly string url;
         internal readonly string filename;
         internal readonly string fragment;
+        internal readonly string images;
 
         internal Page(string title, string id)
         {
@@ -23,6 +24,7 @@ namespace VillebeausonMake
             this.url = PageUrl.toUrl(id);
             this.filename = id + ".html";
             this.fragment = Fragments.getFragment(id);
+            this.images = Images.getFragment(id);
         }
 
         static string getHtml(string id)

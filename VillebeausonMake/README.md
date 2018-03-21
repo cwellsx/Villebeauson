@@ -36,6 +36,19 @@ The page ID must exist in the `!pages.txt` file, and every page must have a sect
 - Each section contains HTML fragments (i.e. text with HTML tag markup).
 Expecting and allowing HTML tags in this file makes it more difficult for a non-developer to edit, but allows complex content (e.g. embedded maps or whatever).
 
+### !images.txt
+
+The [!images.txt](Pages/!images.txt) file defines the ima at the top of each page.
+
+This file has the following format:
+
+- Same sections as `!fragments.txt` (i.e. section starts with a `#` followed by the page ID).
+- Each section contains a mix of lines:
+ - empty lines are ignored
+ - lines which begin with `-` are assumed to be the filename of an image file ... the software wraps these in an appropriate `<img>` tag ... the image file should exist in the `img` folder of the WebSite
+ - lines which begin with `<` are assumed to be HTML blocks and copied without processing into the output
+ - other non-empty lines are text, which the software wraps with a `<p>` (paragraph tag before copying into the output)
+
 ### Other files
 
 All other files (without a `!` in the filename) define text inserted at the end of (i.e. the main body of) each page.
@@ -70,12 +83,15 @@ The `*.cs` files contain C# source code (which you can build and run using Visua
 
 There's one C# `class` per source file (as usual).
 
-Four classes encapsulate (i.e. they know to how to read and are responsible for processing) the four types of input data file:
+Five classes encapsulate (i.e. they know to how to read and are responsible for processing) the five types of input data file:
 
 - [Pages.cs](Pages.cs) reads the [!pages.txt](Pages/!pages.txt) file
 - [Fragments.cs](Fragments.cs) reads the [!fragments.txt](Pages/!fragments.txt) file
+- [Images.cs](Images.cs) reads the [!images.txt](Pages/!images.txt) file
 - [Page.cs](Page.cs) reads the other `*.txt` text files in the `Pages` folder
 - [Template.cs](Template.cs) reads the [template.html](template.html) file
+
+[PageSections.cs](PageSections.cs) contains implementation details shared by `Fragments` and `Images` which read from similar text file formats.
 
 Other classes:
 

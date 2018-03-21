@@ -10,10 +10,17 @@ namespace VillebeausonMake
 {
     static class Output
     {
+        static string root = @"..\..\..\WebSite\";
+
         internal static void write(string filename, string contents)
         {
-            string path = @"..\\..\\..\\WebSite\\" + filename;
+            string path = root + filename;
             File.WriteAllText(path, contents);
+        }
+
+        internal static bool exists(string filename)
+        {
+            return File.Exists(root + filename);
         }
     }
 }
