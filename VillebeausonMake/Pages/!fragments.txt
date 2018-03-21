@@ -1,12 +1,12 @@
 ﻿# welcome
 
 <p>Come to <a href="[events]">our next concert</a> &hellip;</p>
-<p>&hellip; or meet us <a href=[rehearsals]>at rehearsals</a>.</p>
+<p>&hellip; or meet us <a href="[rehearsals]">at rehearsals</a>.</p>
 
 # index
 
 <p>Bienvenue à <a href="[evenements]">notre prochain concert</a> &hellip;</p>
-<p>&hellip; ou rejoignez-nous <a href=[repetitions]>pour les répétitions</a>.</p>
+<p>&hellip; ou rejoignez-nous <a href="[repetitions]">pour les répétitions</a>.</p>
 
 # evenements
 

@@ -30,6 +30,8 @@ namespace VillebeausonMake
                     break;
                 int next = text.IndexOf(']', first);
                 assert(next > first);
+                assert(text[first - 1] == '"');
+                assert(text[next + 1] == '"');
                 string found = text.Substring(first + 1, next - first - 1);
                 Pages.assertPageId(found);
                 text = text.Replace("[" + found + "]", PageUrl.toUrl(found));
