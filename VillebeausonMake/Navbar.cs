@@ -88,7 +88,7 @@ namespace VillebeausonMake
             else
             {
                 language = "Français";
-                lang = "eng";
+                lang = "en";
                 index = i - 1;
             }
             Page page = pages[index];
