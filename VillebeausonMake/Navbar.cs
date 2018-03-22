@@ -45,7 +45,7 @@ namespace VillebeausonMake
 @"
       ";
 
-        internal static string getHtml(Page[] pages, int i, out string lang)
+        internal static string getHtml(Page[] pages, int i, out string lang, out string link)
         {
             int n = pages.Length / 2;
             int remainder = i % 2;
@@ -69,29 +69,34 @@ namespace VillebeausonMake
             return string.Format(
                 headers[style],
                 string.Join(crlf, items),
-                getLanguage(pages, i, remainder, out lang)
+                getLanguage(pages, i, remainder, out lang, out link)
                 );
         }
 
-        static string getLanguage(Page[] pages, int i, int remainder, out string lang)
+        static string getLanguage(Page[] pages, int i, int remainder, out string lang, out string link)
         {
             // lang is the language of the current page, the value of the <html lang="{lang}"> attribute
             // language is the language of the other (target) page, the text in the <a class="language"> hyperlink on the navigation bar
             string language;
+            string alt;
             int index;
             if (remainder == 0)
             {
                 language = "English";
                 lang = "fr";
+                alt = "en";
                 index = i + 1;
             }
             else
             {
                 language = "Français";
                 lang = "en";
+                alt = "fr";
                 index = i - 1;
             }
             Page page = pages[index];
+            // [Use hreflang for language and regional URLs](https://support.google.com/webmasters/answer/189077?authuser=0)
+            link = string.Format(@"<link rel=""alternate"" hreflang=""{0}"" href=""{1}"" />", alt, page.url);
             return string.Format(@"<a class=""btn language border rounded"" href=""{0}"">{1}</a>", page.url, language);
         }
 

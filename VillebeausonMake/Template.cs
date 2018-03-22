@@ -36,18 +36,20 @@ namespace VillebeausonMake
                 Page page = pages[i];
                 // ... create the navigation bar
                 string lang;
-                string navbar = Navbar.getHtml(pages, i, out lang);
+                string link;
+                string navbar = Navbar.getHtml(pages, i, out lang, out link);
                 // ... and output all content
-                output(page, navbar, lang);
+                output(page, navbar, lang, link);
             }
         }
 
-        static void output(Page page, string navbar, string lang)
+        static void output(Page page, string navbar, string lang, string link)
         {
             // get a copy of the template
             string html = templateHtml;
             // replace content into the template
             html = html.Replace("{lang}", lang);
+            html = html.Replace("{link}", link);
             html = html.Replace("{title}", page.title);
             html = html.Replace("{navbar}", navbar);
             string fragment = page.fragment;
