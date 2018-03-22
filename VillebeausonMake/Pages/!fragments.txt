@@ -39,18 +39,16 @@
 # repetitions
 
 <p>Rejoignez-nous pour les répétitions.</p>
-<p>Nous nous rencontrons presque tous les mercredis soirs de l'année, de 19h45 a 21h45,
-à la Salle Des Fêtes de Villebaudon.</p>
-<p><a href="https://goo.gl/maps/1FsbYF4u7Zq">Voici une carte</a>.
-<iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d2619.6278220516915!2d-1.1674861839876705!3d48.960572229297696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e0!4m3!3m2!1d48.9603539!2d-1.1661129!4m3!3m2!1d48.960776499999994!2d-1.1644499!5e0!3m2!1sen!2sfr!4v1521573153861" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<p>Nous nous rencontrons presque tous les mercredis soirs de l'année<sup>1</sup>, de 19h45 a 21h45,
+à la Salle Des Fêtes de Villebaudon. (<a href="https://goo.gl/maps/jc3mNM3gcrM2">voir carte</a>)</p>
+<p><sup>1</sup> <span class="footnote">(sauf vacances, en juillet et aout, et à la fin de l'année)</span></p>
 
 # rehearsals
 
 <p>Meet us at rehearsals.</p>
-<p>We meet almost every Wednesday evening of the year, from 19:45 through 21:45,
-in the <i>Salle Des Fêtes</i> (village hall) in Villebaudon.</p>
-<p><a href="https://goo.gl/maps/1FsbYF4u7Zq">Here is a map</a>.
-<iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d2619.6278220516915!2d-1.1674861839876705!3d48.960572229297696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e0!4m3!3m2!1d48.9603539!2d-1.1661129!4m3!3m2!1d48.960776499999994!2d-1.1644499!5e0!3m2!1sen!2sfr!4v1521573153861" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<p>We meet almost every Wednesday evening of the year<sup>1</sup>, from 19:45 through 21:45,
+in the <i>Salle Des Fêtes</i> in Villebaudon. (<a href="https://goo.gl/maps/jc3mNM3gcrM2">see map</a>)</p>
+<p><sup>1</sup> <span class="footnote">(except holidays, around July and August, and at the year-end)</span></p>
 
 # music
 # musique
