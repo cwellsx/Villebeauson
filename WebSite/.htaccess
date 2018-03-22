@@ -2,8 +2,24 @@ Options +FollowSymLinks
 
 RewriteEngine On
 
+# this is a test of a simple rule i.e. redirect "foo" to "hello.txt"
+
 RewriteRule ^/foo$ /hello.txt
 RewriteRule foo /hello.txt
 
+# redirect www.villebeauson.fr to villebeauson.fr
+# https://help.1and1.com/ssl-certificates-c85183/administration-c85185/ssl-certificate-managed-by-1and1-c85187/redirect-traffic-to-your-ssl-secured-site-a618201.html
+
+RewriteCond %{HTTP_HOST} ^www\.villebeauson\.fr [NC]
+RewriteRule ^(.*)$ https://villebeauson.fr/$1 [R=301,L]
+
+# redirect http:// to https://
+# https://www.godaddy.com/help/redirect-http-to-https-automatically-8828
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# this says, if the requested file doesn't exist then try again adding the .html extension e.g. redirect /welcome to /welcome.html
+
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
