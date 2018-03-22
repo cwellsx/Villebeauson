@@ -38,7 +38,7 @@ Expecting and allowing HTML tags in this file makes it more difficult for a non-
 
 ### !images.txt
 
-The [!images.txt](Pages/!images.txt) file defines the ima at the top of each page.
+The [!images.txt](Pages/!images.txt) file defines the images at the bottom of each page.
 
 This file has the following format:
 
@@ -123,3 +123,15 @@ After HTML files are built, I upload them from the WebSite folder to the live si
 FYI I use WinSCP as my FTP client software.
 
 The credentials (username, password, etc.) of the live site are *not* shown in this public README (they were detailed elsewhere).
+
+The following files exist only in the WebSite folder, they are not built using this `VillebeausonMake` project:
+
+- The Apache `.htaccess` file which defines URL rewrite rules (beware this file exists on the live site but may be invisible to FTP client software)
+- Any image file[s] in the `\img` subdirectory
+- The `bootstrap.min.css` file
+
+There's also a `google*.html` file.
+This file is used by the https://www.google.com/webmasters/tools/home?hl=en tool to verify site ownership.
+I am currently registered as the owner or webmaster.
+You may want to assume ownership.
+The `google*.html` file is excluded from the git repository, using the `.gitignore` file.
