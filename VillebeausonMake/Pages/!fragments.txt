@@ -10,7 +10,7 @@
 
 # evenements
 
-<p>Bienvenue à notre prochain concert:</p>
+<p>Bienvenue à notre prochain concert&nbsp;:</p>
 <dl>
 <dt>Concert avec Anavoce</dt>
 <dd>20h30 samedi 2 juin, à l'église de Beslon</dd>
