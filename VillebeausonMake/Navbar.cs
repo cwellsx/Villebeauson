@@ -25,12 +25,12 @@ namespace VillebeausonMake
   {1}
 </header>",
 
-@"  <header>
+@"  <nav>
     {1}
     <div>
       {0}
     </div>
-  </header>"
+  </nav>"
         };
 
         // ... three implementations
