@@ -35,23 +35,21 @@ namespace VillebeausonMake
                 // for each page ...
                 Page page = pages[i];
                 // ... create the navigation bar
-                string lang;
-                string link;
-                string navbar = Navbar.getHtml(pages, i, out lang, out link);
+                Navbar navbar = new Navbar(pages, i);
                 // ... and output all content
-                output(page, navbar, lang, link);
+                output(page, navbar);
             }
         }
 
-        static void output(Page page, string navbar, string lang, string link)
+        static void output(Page page, Navbar navbar)
         {
             // get a copy of the template
             string html = templateHtml;
             // replace content into the template
-            html = html.Replace("{lang}", lang);
-            html = html.Replace("{link}", link);
+            html = html.Replace("{lang}", navbar.lang);
+            html = html.Replace("{link}", navbar.link);
             html = html.Replace("{title}", page.title);
-            html = html.Replace("{navbar}", navbar);
+            html = html.Replace("{navbar}", navbar.navbarHtml);
             string fragment = page.fragment;
             if (fragment!=null)
             {
@@ -63,6 +61,9 @@ namespace VillebeausonMake
             }
             html = html.Replace("{announce}", fragment);
             html = html.Replace("{html}", page.html + page.images);
+
+            html = html.Replace("{facebookText}", navbar.facebookText);
+            html = html.Replace("{facebookSuffix}", navbar.facebookSuffix);
             // output the result
             Output.write(page.filename, html);
         }

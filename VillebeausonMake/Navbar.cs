@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VillebeausonMake
 {
-    static class Navbar
+    class Navbar
     {
         // I experimented with three implementations
         static string[] headers =
@@ -41,20 +41,70 @@ namespace VillebeausonMake
             @"<a class=""x{0}"" href=""{1}"">{2}</a>"
         };
 
-    static string crlf =
+        // ... currently using the last of the three implementations
+        // because it gave the best result when page was too narrow for all the navbar links
+        const int style = 2;
+
+        static string crlf =
 @"
       ";
 
-        internal static string getHtml(Page[] pages, int i, out string lang, out string link)
+        internal readonly string navbarHtml;
+        // lang is the language of the current page, the value of the <html lang="{lang}"> attribute
+        internal readonly string lang;
+        internal readonly string link;
+
+        internal readonly string facebookText;
+        internal readonly string facebookSuffix;
+
+        internal Navbar(Page[] pages, int i)
         {
             int n = pages.Length / 2;
             int remainder = i % 2;
 
-            // ... currently using the last of the three implementations
-            // because it gave the best result when page was too narrow for all the navbar links
-            int style = 2;
+            IEnumerable<string> items = getItems(pages, i, n, remainder);
 
-            IEnumerable<string> items = getIndexes(n, remainder).Select(index =>
+            // languageLabel is the language of the other (target) page, the text in the <a class="language"> hyperlink on the navigation bar
+            string languageLabel;
+            string alt;
+            int index;
+            if (remainder == 0)
+            {
+                languageLabel = "English";
+                this.lang = "fr";
+                alt = "en";
+
+                facebookText = "Retrouvez-nous sur Facebook";
+                facebookSuffix = "_fr_FR";
+
+                index = i + 1;
+            }
+            else
+            {
+                languageLabel = "Français";
+                this.lang = "en";
+                alt = "fr";
+
+                facebookText = "Find us on Facebook";
+                facebookSuffix = "";
+
+                index = i - 1;
+            }
+            Page page = pages[index];
+            // [Use hreflang for language and regional URLs](https://support.google.com/webmasters/answer/189077?authuser=0)
+            this.link = string.Format(@"<link rel=""alternate"" hreflang=""{0}"" href=""{1}"" />", alt, page.url);
+            string languageButton =  string.Format(@"<a class=""btn language border rounded"" href=""{0}"">{1}</a>", page.url, languageLabel);
+
+            this.navbarHtml = string.Format(
+                headers[style],
+                string.Join(crlf, items),
+                languageButton
+                );
+        }
+
+        static IEnumerable<string> getItems(Page[] pages, int i, int n, int remainder)
+        {
+            return getIndexes(n, remainder).Select(index =>
             {
                 bool isActive = (index == i);
                 Page page = pages[index];
@@ -65,39 +115,6 @@ namespace VillebeausonMake
                     page.title
                     );
             });
-
-            return string.Format(
-                headers[style],
-                string.Join(crlf, items),
-                getLanguage(pages, i, remainder, out lang, out link)
-                );
-        }
-
-        static string getLanguage(Page[] pages, int i, int remainder, out string lang, out string link)
-        {
-            // lang is the language of the current page, the value of the <html lang="{lang}"> attribute
-            // language is the language of the other (target) page, the text in the <a class="language"> hyperlink on the navigation bar
-            string language;
-            string alt;
-            int index;
-            if (remainder == 0)
-            {
-                language = "English";
-                lang = "fr";
-                alt = "en";
-                index = i + 1;
-            }
-            else
-            {
-                language = "Français";
-                lang = "en";
-                alt = "fr";
-                index = i - 1;
-            }
-            Page page = pages[index];
-            // [Use hreflang for language and regional URLs](https://support.google.com/webmasters/answer/189077?authuser=0)
-            link = string.Format(@"<link rel=""alternate"" hreflang=""{0}"" href=""{1}"" />", alt, page.url);
-            return string.Format(@"<a class=""btn language border rounded"" href=""{0}"">{1}</a>", page.url, language);
         }
 
         static IEnumerable<int> getIndexes(int n, int remainder)
