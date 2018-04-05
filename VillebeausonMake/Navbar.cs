@@ -55,6 +55,7 @@ namespace VillebeausonMake
         internal readonly string link;
 
         internal readonly string facebookText;
+        internal readonly string facebookLink;
         internal readonly string facebookSuffix;
 
         internal Navbar(Page[] pages, int i)
@@ -75,6 +76,7 @@ namespace VillebeausonMake
                 alt = "en";
 
                 facebookText = "Retrouvez-nous sur Facebook";
+                facebookLink = "https://fr-fr.facebook.com/Villebeauson/";
                 facebookSuffix = "_fr_FR";
 
                 index = i + 1;
@@ -86,6 +88,7 @@ namespace VillebeausonMake
                 alt = "fr";
 
                 facebookText = "Find us on Facebook";
+                facebookLink = "https://www.facebook.com/Villebeauson/";
                 facebookSuffix = "";
 
                 index = i - 1;

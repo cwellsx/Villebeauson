@@ -63,6 +63,7 @@ namespace VillebeausonMake
             html = html.Replace("{html}", page.html + page.images);
 
             html = html.Replace("{facebookText}", navbar.facebookText);
+            html = html.Replace("{facebookLink}", navbar.facebookLink);
             html = html.Replace("{facebookSuffix}", navbar.facebookSuffix);
             // output the result
             Output.write(page.filename, html);
