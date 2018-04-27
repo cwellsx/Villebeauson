@@ -32,8 +32,19 @@ namespace VillebeausonMake
                 return string.Format("<p>{0}</p>", line);
             // else it's a hyphen followed by an image filename
             string filename = line.Substring(2);
+            string alt = null;
+            if (filename.Contains('|'))
+            {
+                string[] split = filename.Split('|');
+                assert(split.Length == 2);
+                filename = split[0];
+                alt = split[1];
+                assert(Output.exists(@"img\" + alt));
+            }
             assert(Output.exists(@"img\" + filename));
-            return string.Format(@"<p><img src=""/img/{0}""/></p>", filename);
+            return (alt == null)
+                ? string.Format(@"<p><img src=""/img/{0}""/></p>", filename)
+                : string.Format(@"<p><a href=""/img/{1}"" target=""_blank""><img src=""/img/{0}""/></a></p>", filename, alt);
         }
 
         static void assert(bool b)
