@@ -12,28 +12,20 @@
 
 <p>Bienvenue à notre prochain concert&nbsp;:</p>
 <dl>
-<dt>Concert avec Anavoce</dt>
-<dd>20h30 samedi 2 juin, à l'église de Beslon</dd>
-<dt>Concert au profit de la Diabète</dt>
-<dd>15h00 dimanche 10 juin, à l'église de Saint Martin à Montbray</dd>
-<dt>Commémoration des Fusillés de Beaucoudray</dt>
-<dd>11h00 dimanche 17 juin, au Monument des Fusillés de Beaucoudray (<a href="https://goo.gl/maps/XkV6SweUU7A2">voir carte</a>)</dd>
-<dt> Concert pour l'été au profit de la SNSM</dt>
-<dd>15h00 dimanche 24 juin à l'église de Notre Dame des Dunes, Jullouville</dd>
+<dt>Saint Martin de Monbray</dt>
+<dd>14h15-15h30 dimanche 9 décembre</dd>
+<dt>Pont Farcy</dt>
+<dd>15h00 samedi 15 décembre</dd>
 </dl>
 
 # events
 
 <p>Come to our next concert.</p>
 <dl>
-<dt>Concert with Anavoce</dt>
-<dd>20:30 Saturday 2 June, at the church in Beslon</dd>
-<dt>Benefit concert for Diabetes</dt>
-<dd>15:00 Sunday 10 June, at the church of Saint Martin in Montbray</dd>
-<dt>Commemoration of the <i>Fusillés de Beaucoudray</i></dt>
-<dd>11:00 Sunday 17 June, at the <i>Monument des Fusillés de Beaucoudray</i> (<a href="https://goo.gl/maps/XkV6SweUU7A2">see map</a>)</dd>
-<dt> Summer concert (to benefit the SNSM)</dt>
-<dd>15:00 Sunday 24 June, at the church of Notre Dame des Dunes in Jullouville</dd>
+<dt>Saint Martin de Monbray</dt>
+<dd>Sunday 9 December, from 14:15 to 15:30</dd>
+<dt>Pont Farcy</dt>
+<dd>Saturday 15 December, at 15:00</dd>
 </dl>
 
 # repetitions
